@@ -1,0 +1,10 @@
+make b
+cd bin
+cp -f adtTest.bst ../tests/
+cd ../tests
+echo "[ Running my program]"
+./adtTest.bst -f mydo_mike &> log_mine_b
+echo "[ Running ref program]"
+./adtTest-mac.bst -f mydo_mike &> log_ref_b
+colordiff log_mine_b log_ref_b
+

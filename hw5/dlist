@@ -1,0 +1,11 @@
+make d
+cd bin
+cp -f adtTest.dlist ../tests/
+cd ../tests
+echo "[ Running my program]"
+./adtTest.dlist -f mydo_mike &> log_mine_d
+echo "[ Running ref program]"
+./adtTest-mac.dlist -f mydo_mike &> log_ref_d
+colordiff log_mine_d log_ref_d
+
+

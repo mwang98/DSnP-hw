@@ -1,0 +1,7 @@
+./array
+./dlist
+./bst
+cd tests
+diff3  log_mine_a log_mine_d log_mine_b
+
+

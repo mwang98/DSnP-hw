@@ -1,0 +1,23 @@
+echo "Test which data stuctures? < array|dlist|bst >"
+read TYPE
+echo "How many test data?"
+read DATA
+if [ "$TYPE" = "array" ]
+then
+	make a
+elif [ "$TYPE" = "dlist" ]
+then
+	make d
+elif [ "$TYPE" = "bst" ]
+then
+	make b
+else 
+	echo "The argument($TYPE) is invalid!"
+fi
+
+cd bin
+cp -f adtTest.$TYPE ../tests/
+cd ../tests
+
+./check $TYPE $DATA mac
+

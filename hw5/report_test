@@ -1,0 +1,18 @@
+ehco "array"
+./adtTest.array -f do_test &> log_a
+ehco "dlist"
+./adtTest.dlist -f do_test &> log_d
+ehco "bst"
+./adtTest.bst -f do_test &> log_b
+diff3 log_a log_d log_b
+
+echo "Random Deletion"
+echo "[array]"
+./adtTest.array -f do_test1 &> log_a
+ehco "[dlist]"
+./adtTest.dlist -f do_test1 &> log_d
+echo "[BST]"
+./adtTest.bst -f do_test1 &> log_b
+ehco "Comparison between array, dlist, BST"
+diff3 log_a log_d log_b
+

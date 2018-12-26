@@ -1,0 +1,56 @@
+adtp
+adtdelete -s kkk
+adtd -r 5
+adtd -f 1
+adtd -b 2
+adtd -all
+adts
+adtp
+adtp -r
+
+
+adtreset 6
+adta -s kkk
+adta -s a
+adta -s b
+adta -s c
+adta -r 32
+adts
+adtp
+adtq a
+adtq b
+adtq kkk
+adtq zpegzj
+adtq ??
+adtq ywjvtw
+adtq yypxge
+
+adtdelete -s kkk
+adtp
+adtd -r 5
+adtp
+adtd -f 2
+adtp
+adtd -b 2
+adtp
+adtd -all
+adtp
+
+adtr 3
+adta -r 100000
+usage -all
+adtd -s mzpyryaynpawrmtkmodq
+adtd -s mzpyryaynpawrmtkmod
+adts
+usage -all
+adtp
+adtd -r 500
+usage -all
+adtp
+adtd -all
+usage -all
+
+adtp
+usage -all
+
+q -f

@@ -1,0 +1,10 @@
+make a
+cd bin
+cp -f adtTest.array ../tests/
+cd ../tests
+echo "[ Running my program]"
+./adtTest.array -f mydo_mike &> log_mine_a
+echo "[ Running ref program]"
+./adtTest-mac.array -f mydo_mike &> log_ref_a
+colordiff log_mine_a log_ref_a
+
