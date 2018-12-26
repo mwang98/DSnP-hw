@@ -1,0 +1,25 @@
+Please enter the file name: File "test3.json" was read in successfully.
+Enter command: {
+  "asf" : -123,
+  "qQ" : 88,
+  "j" : 0
+}
+Enter command: The maximum element is: { "qQ" : 88 }.
+Enter command: The minimum element is: { "asf" : -123 }.
+Enter command: The average of the values is: -11.7.
+Enter command: Enter command: Enter command: Enter command: Enter command: Enter command: Enter command: Enter command: Enter command: {
+  "asf" : -123,
+  "qQ" : 88,
+  "j" : 0,
+  "MIKE" : 69541,
+  "wha0391" : 3112,
+  "mie13KK3" : 1,
+  "=321/\?~c" : 3,
+  "mie_695" : 312,
+  "??3=1\" : 999999,
+  "?`1!" : -3424
+}
+Enter command: The maximum element is: { "??3=1\" : 999999 }.
+Enter command: The minimum element is: { "?`1!" : -3424 }.
+Enter command: The average of the values is: 106950.9.
+Enter command: 
