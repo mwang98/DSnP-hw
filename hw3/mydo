@@ -1,0 +1,39 @@
+dbapmie
+dbappend mike 1026
+dbappend mike
+dbappend 31232
+dbap m312m 1023m
+dbap mike 312
+dbap 321 3321
+
+
+dbav
+dbc
+dbmax
+dbmin
+dbprint
+dbprint mike
+dbprint Mike
+dbprint 312
+dbprint 321 3mk2
+dbprint mk321 31
+
+dbread test1.json -rep312
+dbread test1.json -r
+
+dbsort
+dbsort -key
+dbsort -value
+
+dbsum
+history3
+history3 321321
+history 9
+
+do mydo
+help
+help dofile
+help d
+help dbre
+
+
