@@ -1,0 +1,5 @@
+make
+cd bin
+cp cirTest ../2018_hw6-Circuit_Parser
+cd ../2018_hw6-Circuit_Parser
+./cirTest

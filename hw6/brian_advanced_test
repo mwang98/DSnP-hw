@@ -1,0 +1,13 @@
+echo "Enter number of test command"
+read NUM
+make
+cd bin
+cp cirTest ../2018_hw6-Circuit_Parser
+cd ../2018_hw6-Circuit_Parser
+for aagfile in "aag_files"/*
+do
+	echo "=== Checking Advanced Data ($aagfile) ==="
+	./check $aagfile $NUM mac
+done
+
+

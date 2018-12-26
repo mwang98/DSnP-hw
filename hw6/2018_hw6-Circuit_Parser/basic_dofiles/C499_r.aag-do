@@ -1,0 +1,9 @@
+cirread ./aag_files/C499_r.aag
+cirp -s
+cirp -n
+cirp -pi
+cirp -po
+cirp -fl
+cirwrite
+usage
+q -f

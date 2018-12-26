@@ -1,0 +1,3 @@
+cirr sim12.aag
+cirp -n
+q -f

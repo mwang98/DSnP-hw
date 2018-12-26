@@ -1,0 +1,11 @@
+cirread ./aag_files/C5315.aag
+cirp -n
+cirp -pi
+cirp -po
+cirp -fl
+cirwrite
+cirgate 378
+cirgate 2518 -fanout 16
+cirgate 1737 -fanout 13
+usage
+q -f

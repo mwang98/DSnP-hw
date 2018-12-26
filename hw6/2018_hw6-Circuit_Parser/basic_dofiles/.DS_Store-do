@@ -1,0 +1,9 @@
+cirread ./aag_files/.DS_Store
+cirp -s
+cirp -n
+cirp -pi
+cirp -po
+cirp -fl
+cirwrite
+usage
+q -f

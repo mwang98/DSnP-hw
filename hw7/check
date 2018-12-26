@@ -1,0 +1,39 @@
+echo "=========[Test dofile]========="
+make
+echo "==========Enter dofile========="
+echo "Enter [mydo], if you want to randomly generate a dofile."
+echo "Enter [all],  if you want to use all dofiles in /dofiles."
+read DOFILE
+
+if [ "$DOFILE" = "all" ]
+then
+	for dof in "dofiles"/*
+	do
+		echo "========Executing $dof========"
+		echo "=====Running Ref Program======"
+		./taskMgr-mac -f $dof &> log_ref_$dof
+		echo "=====Running Your Program====="
+		./taskMgr -f $dof &> log_mine_$dof
+		echo "==========Difference=========="
+		colordiff log_ref_$dof log_mine_$dof
+		rm log_mine_$dof
+		rm log_ref_$dof
+	done
+else
+	if [ "$DOFILE" = "mydo" ]
+	then
+		cd dofiles
+		echo "=====Generating test case======"
+		python gen.py
+		cd ..
+	fi
+	echo "=====Running Ref Program======"
+	./taskMgr-mac -f dofiles/$DOFILE &> log_ref_$DOFILE
+	echo "=====Running Your Program====="
+	./taskMgr -f dofiles/$DOFILE &> log_mine_$DOFILE
+	echo "==========Difference=========="
+	colordiff log_ref_$DOFILE log_mine_$DOFILE 
+	rm log_mine_$DOFILE
+	rm log_ref_$DOFILE
+fi
+

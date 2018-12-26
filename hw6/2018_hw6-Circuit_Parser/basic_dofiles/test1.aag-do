@@ -1,0 +1,9 @@
+cirread ./aag_files/test1.aag
+cirp -s
+cirp -n
+cirp -pi
+cirp -po
+cirp -fl
+cirwrite
+usage
+q -f
