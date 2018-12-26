@@ -1,0 +1,765 @@
+mtest> mtnew 10
+
+mtest> mtnew 5 -a 512
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 36856
+* Recycle list          : 
+[135] = 1         [145] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+ooooo
+
+mtest> mtnew 5 -a 1024
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 8
+* Free mem in last block: 8184
+* Recycle list          : 
+[135] = 1         [145] = 1         [146] = 4         [658] = 1         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+oooooooooo
+
+mtest> mtnew 5 -a 256
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 51192
+* Recycle list          : 
+[135] = 1         [145] = 2         [146] = 5         [658] = 1         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooooooooo
+Array list ---
+ooooooooooooooo
+
+mtest> mtdel -i 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 51192
+* Recycle list          : 
+[  0] = 1         [135] = 1         [145] = 2         [146] = 5         
+[658] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooooooooooooo
+
+mtest> mtdel -i 4 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 51192
+* Recycle list          : 
+[  0] = 1         [512] = 1         [135] = 1         [145] = 2         
+[146] = 5         [658] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooxoooooooooo
+
+mtest> mtdel -i 8 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 51192
+* Recycle list          : 
+[  0] = 1         [512] = 1         [1024] = 1         [135] = 1         
+[145] = 2         [146] = 5         [658] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooxoooxoooooo
+
+mtest> mtdel -i 13 -a
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 65536 Bytes
+* Number of blocks      : 10
+* Free mem in last block: 51192
+* Recycle list          : 
+[  0] = 1         [512] = 1         [1024] = 1         [256] = 1         
+[135] = 1         [145] = 2         [146] = 5         [658] = 1         
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oooxoooooo
+Array list ---
+ooooxoooxooooxo
+
+mtest> mtr 120
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 120
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtr 170
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 176 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 176
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 176 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 56
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+o
+
+mtest> mtn 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 176 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 0
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+o
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 176 Bytes
+* Number of blocks      : 2
+* Free mem in last block: 56
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+oo
+
+mtest> mtn -a 1 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 176 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 112
+* Recycle list          : 
+[  0] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+ooo
+
+mtest> 
+mtest> mtr 120
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 120
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 0
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+o
+
+mtest> mtn 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 2
+* Free mem in last block: 64
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+o
+
+mtest> mtn -a 2 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 0
+* Recycle list          : 
+[  1] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+oo
+
+mtest> mtn -a 1 1
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 3
+* Free mem in last block: 0
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+o
+Array list ---
+ooo
+
+mtest> mtr 0
+Illegal block size (0)!!
+Error: Illegal option!! (0)
+
+mtest> mtr 39
+Illegal block size (39)!!
+Error: Illegal option!! (39)
+
+mtest> mtr 40
+Illegal block size (40)!!
+Error: Illegal option!! (40)
+
+mtest> mtn 1
+
+mtest> mtn 1 -a 1
+
+mtest> mtn 1 -a 0
+Error: Illegal option!! (0)
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 120 Bytes
+* Number of blocks      : 4
+* Free mem in last block: 0
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oo
+Array list ---
+oooo
+
+mtest> MTD
+Error: Missing option!!
+
+mtest> mtd -a
+Error: Missing option!!
+
+mtest> mtd -r 4
+
+mtest> help mtn
+Usage: MTNew <(size_t numObjects)> [-Array (size_t arraySize)]
+
+mtest> mtn 5
+
+mtest> mtr 500
+
+mtest> mtn 5
+
+mtest> mtd -a -Ran 3
+Size of array list is 0!!
+Error: Illegal option!! (-Ran)
+
+mtest> mtd -r -3
+Error: Illegal option!! (-3)
+
+mtest> mtd -r 3
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 224
+* Recycle list          : 
+[  0] = 2         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxoox
+Array list ---
+
+
+mtest> mtn 123
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 14
+* Free mem in last block: 0
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxooxooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooo
+Array list ---
+
+
+mtest> mtd -r -r 23
+Error: Illegal option!! (-r)
+
+mtest> mtd -r 23 -r
+Error: Extra option!! (-r)
+
+mtest> mtd -r 23
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 14
+* Free mem in last block: 0
+* Recycle list          : 
+[  0] = 20        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxooxoooxxooooooooooxoooxooooooooooooxoooooxxoxooo
+oooooooooxoxooooooooooooooooxoooxoooooooooooooooox
+ooooooxxoxooxoxoooooooooxxoo
+Array list ---
+
+
+mtest> mtd -r 23 -i 5 -a
+Error: Extra option!! (-i)
+
+mtest> mtn 123 -a 999
+Requested memory (55952) is greater than block size(504). Exception raised...
+
+mtest> mtn 123 -a 0
+Error: Illegal option!! (0)
+
+mtest> mtn 123 -a 10
+Requested memory (568) is greater than block size(504). Exception raised...
+
+mtest> mtd -ARR -i 54
+Size of array list (0) is <= 54!!
+Error: Illegal option!! (54)
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 14
+* Free mem in last block: 0
+* Recycle list          : 
+[  0] = 20        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxooxoooxxooooooooooxoooxooooooooooooxoooooxxoxooo
+oooooooooxoxooooooooooooooooxoooxoooooooooooooooox
+ooooooxxoxooxoxoooooooooxxoo
+Array list ---
+
+
+mtest> mtd -a -r 100
+Size of array list is 0!!
+Error: Illegal option!! (-r)
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 14
+* Free mem in last block: 0
+* Recycle list          : 
+[  0] = 20        
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+oxooxoooxxooooooooooxoooxooooooooooooxoooooxxoxooo
+oooooooooxoxooooooooooooooooxoooxoooooooooooooooox
+ooooooxxoxooxoxoooooooooxxoo
+Array list ---
+
+
+mtest> mtn 60 -a 11
+Requested memory (624) is greater than block size(504). Exception raised...
+
+mtest> mtn 60 -a 10
+Requested memory (568) is greater than block size(504). Exception raised...
+
+mtest> mtr
+
+mtest> mtn 123 -a 10
+Requested memory (568) is greater than block size(504). Exception raised...
+
+mtest> mtd -ARR -i 54
+Size of array list (0) is <= 54!!
+Error: Illegal option!! (54)
+
+mtest> mtd -a -r 100
+Size of array list is 0!!
+Error: Illegal option!! (-r)
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 504
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtn 60 -a 10
+Requested memory (568) is greater than block size(504). Exception raised...
+
+mtest> mtn 60 -a 10 -i 3
+Error: Extra option!! (-i)
+
+mtest> mtn -a 10 60
+Requested memory (568) is greater than block size(504). Exception raised...
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 504 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 504
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+
+
+mtest> mtr 1234
+
+mtest> mtr -123
+Illegal block size (-123)!!
+Error: Illegal option!! (-123)
+
+mtest> mtr 100000
+
+mtest> mtn 60 -a 10
+
+mtest> mtn 30 -a 5130
+Requested memory (287288) is greater than block size(100000). Exception raised...
+
+mtest> mtn 80 -a 2058
+Requested memory (115256) is greater than block size(100000). Exception raised...
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 65920
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooo
+
+mtest> mtn -r 20 -a
+Error: Illegal option!! (-r)
+
+mtest> mtn -r 50 -a
+Error: Illegal option!! (-r)
+
+mtest> mtn 60 -a 10
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 1
+* Free mem in last block: 31840
+* Recycle list          : 
+
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooo
+
+mtest> mtn 30 -a 4878
+Requested memory (273176) is greater than block size(100000). Exception raised...
+
+mtest> mtn 80 -a 2058
+Requested memory (115256) is greater than block size(100000). Exception raised...
+
+mtest> mtn 1 -a 266
+
+mtest> mtn 60 -a 11
+
+mtest> mtp
+=========================================
+=              Memory Manager           =
+=========================================
+* Block size            : 100000 Bytes
+* Number of blocks      : 2
+* Free mem in last block: 79408
+* Recycle list          : 
+[  1] = 1         
+=========================================
+=             class MemTest             =
+=========================================
+Object list ---
+
+Array list ---
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+ooooooooooooooooooooooooooooooo
+
+mtest> mtn 30 -a 4879
+Requested memory (273232) is greater than block size(100000). Exception raised...
+
+mtest> mtn 80 -a 2059
+Requested memory (115312) is greater than block size(100000). Exception raised...
+
+mtest> mtn 10 -a 10
+
+mtest> mtn 32 -a 266
+
+mtest> mtn 54 -a 522
+
+mtest> mtn 76 -a 778
+
+mtest> mtn 98 -a 1034
+
+mtest> mtn 200 -a 3476
+Requested memory (194664) is greater than block size(100000). Exception raised...
+
+mtest> mtd -r 3000 -a
+
+mtest> mtn 218 -a 2324
+Requested memory (130152) is greater than block size(100000). Exception raised...
+
+mtest> mtn 170 -a 404
+
+mtest> mtn 64 -a 532
+
+mtest> mtn 192 -a 660
+
+mtest> mtn 2 -a 1172
+
+mtest> mtn 130 -a 1300
+
+mtest> mtn 24 -a 1428
+
+mtest> mtd -r 300 -a
+
+mtest> mtn 86 -a 788
+
+mtest> mtn 214 -a 916
+
+mtest> mtn 108 -a 1044
+
+mtest> mtn -r 1000
+Error: Illegal option!! (-r)
+
+mtest> mtn -r 1000 -a
+Error: Illegal option!! (-r)
+
+mtest> mtn 623 -a 256
+
+mtest> mtn 623 -a 1024
+
+mtest> mtn 24 -a 1428
+
+mtest> mtn 30 -a 3 
+
+mtest> mtn 30 -a 3
+
+mtest> mtn 123
+
+mtest> mtd 55 -r
+Error: Illegal option!! (55)
+
+mtest> mtn 20000
+
+mtest> mtd -i 0
+
+mtest> mtd -i 20000
+
+mtest> mtd -i 0
+
+Assertion failed: (idx < _arrList.size()), function deleteArr, file memTest.h, line 75.
+mtest> mtd -a -r 1234

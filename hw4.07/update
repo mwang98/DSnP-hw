@@ -1,0 +1,4 @@
+make
+cp memTest ./dsnp_test_cases/2018_hw4-Memory_Manager
+cd  ./dsnp_test_cases/2018_hw4-Memory_Manager
+./check mac $1

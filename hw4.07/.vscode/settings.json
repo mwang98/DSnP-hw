@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "iosfwd": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "iterator": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "__split_buffer": "cpp",
+        "__tree": "cpp",
+        "bitset": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "map": "cpp",
+        "stack": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "utility": "cpp"
+    },
+        "terminal.external.osxExec" : "/Applications/iTerm.app",
+        "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+        "terminal.integrated.fontFamily": "SauceCodePro Nerd Font"
+}
