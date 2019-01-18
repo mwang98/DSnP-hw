@@ -1,0 +1,81 @@
+fraig> cirread ./aag_files/test3.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           4
+  PO           1
+  AIG          4
+------------------
+  Total        9
+
+fraig> cirp -n
+
+[0] PI  2
+[1] PI  3
+[2] PI  6
+[3] AIG 11 3 6
+[4] AIG 16 2 !11
+[5] PI  7
+[6] AIG 19 7 !11
+[7] AIG 23 !16 !19
+[8] PO  25 !23
+
+fraig> cirp -pi
+PIs of the circuit: 2 3 6 7
+
+fraig> cirp -po
+POs of the circuit: 25
+
+fraig> cirp -fl
+
+fraig> ciropt
+
+fraig> cirsw
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           4
+  PO           1
+  AIG          4
+------------------
+  Total        9
+
+fraig> cirp -n
+
+[0] PI  2
+[1] PI  3
+[2] PI  6
+[3] AIG 11 3 6
+[4] AIG 16 2 !11
+[5] PI  7
+[6] AIG 19 7 !11
+[7] AIG 23 !16 !19
+[8] PO  25 !23
+
+fraig> cirp -fl
+
+fraig> cirwrite
+aag 24 4 0 1 4
+4
+6
+12
+14
+47
+22 6 12
+32 4 23
+38 14 23
+46 33 39
+c
+AAG output by Ting-Chun (Mike) Wang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.3008 M Bytes
+
+fraig> q -f
+

@@ -1,0 +1,83 @@
+fraig> cirread ./aag_files/strash05.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           3
+  PO           2
+  AIG          4
+------------------
+  Total        9
+
+fraig> cirp -n
+
+[0] PI  1
+[1] AIG 4 1 *8
+[2] PI  2
+[3] AIG 6 4 2
+[4] PO  9 6
+[5] AIG 5 *8 1
+[6] AIG 7 2 5
+[7] PO  10 7
+
+fraig> cirp -pi
+PIs of the circuit: 1 2 3
+
+fraig> cirp -po
+POs of the circuit: 9 10
+
+fraig> cirp -fl
+Gates with floating fanin(s): 4 5
+Gates defined but not used  : 3
+
+fraig> ciropt
+
+fraig> cirsw
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           3
+  PO           2
+  AIG          4
+------------------
+  Total        9
+
+fraig> cirp -n
+
+[0] PI  1
+[1] AIG 4 1 *8
+[2] PI  2
+[3] AIG 6 4 2
+[4] PO  9 6
+[5] AIG 5 *8 1
+[6] AIG 7 2 5
+[7] PO  10 7
+
+fraig> cirp -fl
+Gates with floating fanin(s): 4 5
+Gates defined but not used  : 3
+
+fraig> cirwrite
+aag 8 3 0 2 4
+2
+4
+6
+12
+14
+8 2 16
+12 8 4
+10 16 2
+14 4 10
+c
+AAG output by Ting-Chun (Mike) Wang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.3164 M Bytes
+
+fraig> q -f
+

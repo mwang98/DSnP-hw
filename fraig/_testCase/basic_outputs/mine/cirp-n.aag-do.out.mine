@@ -1,0 +1,97 @@
+fraig> cirread ./aag_files/cirp-n.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           4
+  PO           2
+  AIG          6
+------------------
+  Total       12
+
+fraig> cirp -n
+
+[0] PI  1 (1GAT)
+[1] CONST0
+[2] AIG 10 1 0
+[3] PI  2 (2GAT)
+[4] PI  6 (6GAT)
+[5] AIG 11 !1 6
+[6] AIG 16 2 !11
+[7] AIG 22 !10 !16
+[8] PO  24 !22 (22GAT$PO)
+[9] PI  7 (7GAT)
+[10] AIG 19 *!15 7
+[11] AIG 23 !16 !19
+[12] PO  25 !23 (23GAT$PO)
+
+fraig> cirp -pi
+PIs of the circuit: 1 2 6 7
+
+fraig> cirp -po
+POs of the circuit: 24 25
+
+fraig> cirp -fl
+Gates with floating fanin(s): 19
+
+fraig> ciropt
+Simplifying: 0 merging 10...
+Simplifying: 16 merging !22...
+
+fraig> cirsw
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           4
+  PO           2
+  AIG          4
+------------------
+  Total       10
+
+fraig> cirp -n
+
+[0] PI  2 (2GAT)
+[1] PI  1 (1GAT)
+[2] PI  6 (6GAT)
+[3] AIG 11 !1 6
+[4] AIG 16 2 !11
+[5] PO  24 16 (22GAT$PO)
+[6] PI  7 (7GAT)
+[7] AIG 19 *!15 7
+[8] AIG 23 !16 !19
+[9] PO  25 !23 (23GAT$PO)
+
+fraig> cirp -fl
+Gates with floating fanin(s): 19
+
+fraig> cirwrite
+aag 23 4 0 2 4
+2
+4
+12
+14
+32
+47
+22 3 12
+32 4 23
+38 31 14
+46 33 39
+i0 1GAT
+i1 2GAT
+i2 6GAT
+i3 7GAT
+o0 22GAT$PO
+o1 23GAT$PO
+c
+AAG output by Ting-Chun (Mike) Wang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.3008 M Bytes
+
+fraig> q -f
+

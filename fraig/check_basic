@@ -1,0 +1,12 @@
+echo "=== Generating basic test cases ==="
+python3 gen_basic.py
+for dofile in "tests.fraig"/*
+do
+    echo "=== Checking dofile $dofile ==="
+    ./fraig <$dofile &>$dofile.out.mine
+    ./fraig-mac <$dofile &>$dofile.out.ref
+    colordiff $dofile.out.mine $dofile.out.ref
+    rm $dofile.out.mine
+    rm $dofile.out.ref
+done
+

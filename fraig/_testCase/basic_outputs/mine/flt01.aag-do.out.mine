@@ -1,0 +1,59 @@
+fraig> cirread ./aag_files/flt01.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           2
+  PO           0
+  AIG          1
+------------------
+  Total        3
+
+fraig> cirp -n
+
+
+fraig> cirp -pi
+PIs of the circuit: 1 2
+
+fraig> cirp -po
+POs of the circuit:
+
+fraig> cirp -fl
+Gates defined but not used  : 3
+
+fraig> ciropt
+
+fraig> cirsw
+Sweeping: AIG(3) removed...
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           2
+  PO           0
+  AIG          0
+------------------
+  Total        2
+
+fraig> cirp -n
+
+
+fraig> cirp -fl
+Gates defined but not used  : 1 2
+
+fraig> cirwrite
+aag 3 2 0 0 0
+2
+4
+c
+AAG output by Ting-Chun (Mike) Wang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.3125 M Bytes
+
+fraig> q -f
+

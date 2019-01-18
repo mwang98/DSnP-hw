@@ -1,0 +1,65 @@
+fraig> cirread ./aag_files/flt03.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           1
+  PO           1
+  AIG          1
+------------------
+  Total        3
+
+fraig> cirp -n
+
+[0] PI  1
+[1] AIG 2 1 *3
+[2] PO  4 2
+
+fraig> cirp -pi
+PIs of the circuit: 1
+
+fraig> cirp -po
+POs of the circuit: 4
+
+fraig> cirp -fl
+Gates with floating fanin(s): 2
+
+fraig> ciropt
+
+fraig> cirsw
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           1
+  PO           1
+  AIG          1
+------------------
+  Total        3
+
+fraig> cirp -n
+
+[0] PI  1
+[1] AIG 2 1 *3
+[2] PO  4 2
+
+fraig> cirp -fl
+Gates with floating fanin(s): 2
+
+fraig> cirwrite
+aag 3 1 0 1 1
+2
+4
+4 2 6
+c
+AAG output by Ting-Chun (Mike) Wang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.332 M Bytes
+
+fraig> q -f
+

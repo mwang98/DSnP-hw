@@ -1,0 +1,74 @@
+fraig> cirread ./aag_files/strash06.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           2
+  PO           1
+  AIG          6
+------------------
+  Total        9
+
+fraig> cirp -n
+
+[0] PI  1
+[1] PI  2
+[2] AIG 3 1 2
+[3] PO  11 3
+
+fraig> cirp -pi
+PIs of the circuit: 1 2
+
+fraig> cirp -po
+POs of the circuit: 11
+
+fraig> cirp -fl
+Gates with floating fanin(s): 7
+Gates defined but not used  : 9 10
+
+fraig> ciropt
+
+fraig> cirsw
+Sweeping: AIG(5) removed...
+Sweeping: UNDEF(6) removed...
+Sweeping: AIG(7) removed...
+Sweeping: AIG(8) removed...
+Sweeping: AIG(9) removed...
+Sweeping: AIG(10) removed...
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           2
+  PO           1
+  AIG          1
+------------------
+  Total        4
+
+fraig> cirp -n
+
+[0] PI  1
+[1] PI  2
+[2] AIG 3 1 2
+[3] PO  11 3
+
+fraig> cirp -fl
+
+fraig> cirwrite
+aag 10 2 0 1 1
+2
+4
+6
+6 2 4
+c
+AAG output by Chung-Yang (Ric) Huang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.2422 M Bytes
+
+fraig> q -f
+

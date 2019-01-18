@@ -1,0 +1,9 @@
+taski 1000000
+taskn -r 1000000
+Taskr -r 999999
+taskn -r 1000000
+taskq -heap
+taska 1000 -r 100000
+taskq -heap
+usage
+Q -f

@@ -1,0 +1,72 @@
+fraig> cirread ./aag_files/sim11.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           2
+  PO           2
+  AIG          2
+------------------
+  Total        6
+
+fraig> cirp -n
+
+[0] PI  1
+[1] PI  2
+[2] AIG 3 1 2
+[3] PO  5 3
+[4] AIG 4 !1 2
+[5] PO  6 4
+
+fraig> cirp -pi
+PIs of the circuit: 1 2
+
+fraig> cirp -po
+POs of the circuit: 5 6
+
+fraig> cirp -fl
+
+fraig> ciropt
+
+fraig> cirsw
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           2
+  PO           2
+  AIG          2
+------------------
+  Total        6
+
+fraig> cirp -n
+
+[0] PI  1
+[1] PI  2
+[2] AIG 3 1 2
+[3] PO  5 3
+[4] AIG 4 !1 2
+[5] PO  6 4
+
+fraig> cirp -fl
+
+fraig> cirwrite
+aag 4 2 0 2 2
+2
+4
+6
+8
+6 2 4
+8 3 4
+c
+AAG output by Ting-Chun (Mike) Wang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.3359 M Bytes
+
+fraig> q -f
+

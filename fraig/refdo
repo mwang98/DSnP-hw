@@ -1,0 +1,16 @@
+cirr tests.fraig/sim13.aag -r
+cirsim -f tests.fraig/pattern.13 -o sim_ref
+//cirsim -r
+//cirp -fec
+//cirp -n
+usage
+//cirfraig
+//cirsw
+//ciropt
+//cirp -n
+cirp
+usage
+q -f
+
+
+

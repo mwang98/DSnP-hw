@@ -1,0 +1,19 @@
+cd ../
+make
+cd bin
+cp fraig ../_testCase
+cd ../_testCase
+echo "=== Generating basic test cases ==="
+python3 gen_basic.py
+for dofile in "basic_dofiles"/*
+do
+    echo "=== Checking dofile $dofile ==="
+    echo "===   Running ref program   ==="
+    ./fraig-mac <$dofile &>$dofile.out.ref
+    echo "===   Running your program  ==="
+    ./fraig <$dofile &>$dofile.out.mine
+    colordiff $dofile.out.ref $dofile.out.mine
+    mv $dofile.out.mine ./basic_outputs/mine/
+    mv $dofile.out.ref ./basic_outputs/ref/
+done
+

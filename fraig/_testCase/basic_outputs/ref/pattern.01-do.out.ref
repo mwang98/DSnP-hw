@@ -1,0 +1,40 @@
+fraig> cirread ./tests.fraig/pattern.01
+Cannot open design "./tests.fraig/pattern.01"!!
+
+fraig> cirp -s
+Error: circuit is not yet constructed!!
+
+fraig> cirp -n
+Error: circuit is not yet constructed!!
+
+fraig> cirp -pi
+Error: circuit is not yet constructed!!
+
+fraig> cirp -po
+Error: circuit is not yet constructed!!
+
+fraig> cirp -fl
+Error: circuit is not yet constructed!!
+
+fraig> cirsw
+Error: circuit is not yet constructed!!
+
+fraig> cirp -s
+Error: circuit is not yet constructed!!
+
+fraig> cirp -n
+Error: circuit is not yet constructed!!
+
+fraig> cirp -fl
+Error: circuit is not yet constructed!!
+
+fraig> cirwrite
+Error: circuit is not yet constructed!!
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.1875 M Bytes
+
+fraig> q -f
+

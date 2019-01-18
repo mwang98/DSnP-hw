@@ -1,0 +1,64 @@
+fraig> cirread ./aag_files/opt02.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           1
+  PO           1
+  AIG          1
+------------------
+  Total        3
+
+fraig> cirp -n
+
+[0] CONST0
+[1] PI  1
+[2] AIG 2 0 1
+[3] PO  3 2
+
+fraig> cirp -pi
+PIs of the circuit: 1
+
+fraig> cirp -po
+POs of the circuit: 3
+
+fraig> cirp -fl
+
+fraig> ciropt
+Simplifying: 0 merging 2...
+
+fraig> cirsw
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           1
+  PO           1
+  AIG          0
+------------------
+  Total        2
+
+fraig> cirp -n
+
+[0] CONST0
+[1] PO  3 0
+
+fraig> cirp -fl
+Gates defined but not used  : 1
+
+fraig> cirwrite
+aag 2 1 0 1 0
+2
+0
+c
+AAG output by Chung-Yang (Ric) Huang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.2578 M Bytes
+
+fraig> q -f
+

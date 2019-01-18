@@ -1,0 +1,40 @@
+fraig> cirread ./aag_files/C1355.aag.out.ref
+Cannot open design "./aag_files/C1355.aag.out.ref"!!
+
+fraig> cirp -s
+Error: circuit is not yet constructed!!
+
+fraig> cirp -n
+Error: circuit is not yet constructed!!
+
+fraig> cirp -pi
+Error: circuit is not yet constructed!!
+
+fraig> cirp -po
+Error: circuit is not yet constructed!!
+
+fraig> cirp -fl
+Error: circuit is not yet constructed!!
+
+fraig> cirsw
+Error: circuit is not yet constructed!!
+
+fraig> cirp -s
+Error: circuit is not yet constructed!!
+
+fraig> cirp -n
+Error: circuit is not yet constructed!!
+
+fraig> cirp -fl
+Error: circuit is not yet constructed!!
+
+fraig> cirwrite
+Error: circuit is not yet constructed!!
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.2031 M Bytes
+
+fraig> q -f
+

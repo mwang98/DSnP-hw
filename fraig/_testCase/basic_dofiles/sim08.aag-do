@@ -1,0 +1,14 @@
+cirread ./aag_files/sim08.aag
+cirp -s
+cirp -n
+cirp -pi
+cirp -po
+cirp -fl
+ciropt
+cirsw
+cirp -s
+cirp -n
+cirp -fl
+cirwrite
+usage
+q -f

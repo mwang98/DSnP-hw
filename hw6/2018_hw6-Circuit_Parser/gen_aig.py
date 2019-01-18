@@ -6,6 +6,7 @@ import numpy.random as random
 from numpy.random import randint
 
 def get_prob(levels, base):
+    base = float(base)
     l = np.arange(0, levels)
     p = base ** l
     return p / np.sum(p)
@@ -81,7 +82,14 @@ def gen_dofile(circuit, num_test):
     dofile += "cirp -po\n"
     dofile += "cirp -fl\n"
     dofile += "cirwrite\n"
-
+    dofile += "cirsweep\n"
+    dofile += "cirp -s\n"
+    dofile += "cirp -n\n"
+    dofile += "cirp -pi\n"
+    dofile += "cirp -po\n"
+    dofile += "cirp -fl\n"
+    dofile += "cirwrite\n"
+    
     for _ in range(0, num_test):
         fan_type = 'fanin' if random.uniform() > 0.5 else 'fanout'
         gate_id = random.randint(len(all_gates))
@@ -92,7 +100,7 @@ def gen_dofile(circuit, num_test):
 
 if __name__ == "__main__":
     # Configs
-    p_base = 2 # Determines the "flattness" of the circuit
+    p_base = 5#random.uniform(1, 3) # Determines the "flattness" of the circuit
     max_id = 500 # Maximum gate id
     levels = (49, 50) # Range of circuit levels
     level_gates = (10, 11) # Range of number of gates in each level

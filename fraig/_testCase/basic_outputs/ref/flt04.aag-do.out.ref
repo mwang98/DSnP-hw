@@ -1,0 +1,59 @@
+fraig> cirread ./aag_files/flt04.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           0
+  PO           0
+  AIG          1
+------------------
+  Total        1
+
+fraig> cirp -n
+
+
+fraig> cirp -pi
+PIs of the circuit:
+
+fraig> cirp -po
+POs of the circuit:
+
+fraig> cirp -fl
+Gates with floating fanin(s): 1
+Gates defined but not used  : 1
+
+fraig> ciropt
+
+fraig> cirsw
+Sweeping: AIG(1) removed...
+Sweeping: UNDEF(2) removed...
+Sweeping: UNDEF(3) removed...
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI           0
+  PO           0
+  AIG          0
+------------------
+  Total        0
+
+fraig> cirp -n
+
+
+fraig> cirp -fl
+
+fraig> cirwrite
+aag 3 0 0 0 0
+c
+AAG output by Chung-Yang (Ric) Huang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.2539 M Bytes
+
+fraig> q -f
+

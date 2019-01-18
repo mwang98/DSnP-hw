@@ -1,0 +1,1205 @@
+fraig> cirread ./aag_files/test.aag
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI          10
+  PO          10
+  AIG        490
+------------------
+  Total      510
+
+fraig> cirp -n
+
+[0] PI  271
+[1] PI  273
+[2] AIG 443 !273 273
+[3] PI  136
+[4] AIG 263 !443 !136
+[5] PI  472
+[6] PI  414
+[7] AIG 46 472 414
+[8] PI  305
+[9] AIG 265 46 !305
+[10] AIG 489 263 !265
+[11] PI  405
+[12] AIG 295 405 !273
+[13] PI  440
+[14] AIG 231 440 271
+[15] AIG 222 !295 231
+[16] AIG 128 489 !222
+[17] PI  390
+[18] AIG 121 !390 136
+[19] AIG 254 265 121
+[20] AIG 285 254 254
+[21] AIG 485 254 !285
+[22] AIG 416 128 485
+[23] AIG 2 !271 !273
+[24] AIG 27 !414 2
+[25] PI  343
+[26] AIG 223 !343 !271
+[27] AIG 348 !2 !223
+[28] AIG 291 !348 405
+[29] AIG 375 !27 291
+[30] AIG 470 !375 375
+[31] AIG 112 416 470
+[32] AIG 386 271 !112
+[33] AIG 350 414 !2
+[34] AIG 12 !350 265
+[35] AIG 115 12 263
+[36] AIG 438 305 !343
+[37] AIG 393 !438 !265
+[38] AIG 366 !115 !393
+[39] AIG 499 !222 366
+[40] AIG 302 499 !499
+[41] AIG 81 386 !302
+[42] AIG 325 !438 2
+[43] AIG 22 405 414
+[44] AIG 143 136 22
+[45] AIG 96 !143 348
+[46] AIG 488 325 96
+[47] AIG 15 488 !27
+[48] AIG 249 !405 !438
+[49] AIG 69 249 488
+[50] AIG 32 15 !69
+[51] AIG 240 !263 !440
+[52] AIG 380 !240 240
+[53] AIG 25 143 438
+[54] AIG 404 489 !12
+[55] AIG 85 25 !404
+[56] AIG 59 !380 !85
+[57] AIG 212 32 !59
+[58] AIG 266 !212 143
+[59] AIG 422 81 !266
+[60] AIG 270 69 !32
+[61] AIG 75 285 !270
+[62] AIG 67 75 !499
+[63] AIG 164 !386 67
+[64] AIG 178 !164 !386
+[65] AIG 216 !422 178
+[66] AIG 315 !121 !32
+[67] AIG 72 315 !315
+[68] AIG 215 315 !72
+[69] AIG 444 !315 !366
+[70] AIG 382 !215 444
+[71] AIG 134 81 !382
+[72] AIG 374 !216 !134
+[73] AIG 391 85 !222
+[74] AIG 90 !414 !438
+[75] AIG 236 90 22
+[76] AIG 221 !285 236
+[77] AIG 362 !350 !136
+[78] AIG 7 362 !273
+[79] AIG 384 221 7
+[80] AIG 161 !384 !128
+[81] AIG 304 !391 161
+[82] AIG 345 !374 !304
+[83] AIG 224 !470 470
+[84] AIG 190 32 224
+[85] AIG 177 190 270
+[86] AIG 149 190 !177
+[87] AIG 11 149 212
+[88] AIG 1 11 422
+[89] AIG 154 422 !178
+[90] AIG 43 !27 !15
+[91] AIG 179 43 !350
+[92] AIG 277 32 !315
+[93] AIG 102 !179 277
+[94] AIG 264 224 102
+[95] AIG 201 115 264
+[96] AIG 181 !201 !67
+[97] AIG 457 !134 !181
+[98] AIG 359 457 !181
+[99] AIG 169 154 !359
+[100] AIG 448 !270 266
+[101] AIG 292 448 !212
+[102] AIG 500 177 !292
+[103] AIG 486 !169 500
+[104] AIG 31 1 !486
+[105] AIG 180 !96 366
+[106] AIG 26 !180 !75
+[107] AIG 290 26 26
+[108] AIG 395 485 !43
+[109] AIG 420 !395 375
+[110] AIG 86 !420 !177
+[111] AIG 167 190 75
+[112] AIG 210 86 !167
+[113] AIG 36 290 !210
+[114] AIG 207 !31 36
+[115] AIG 217 !345 207
+[116] AIG 220 500 !292
+[117] AIG 58 !457 220
+[118] AIG 260 !359 210
+[119] AIG 309 !58 !260
+[120] AIG 334 309 !58
+[121] AIG 408 334 !334
+[122] AIG 433 !154 !67
+[123] AIG 171 !500 433
+[124] AIG 331 171 !134
+[125] AIG 358 !169 331
+[126] AIG 441 408 358
+[127] AIG 342 36 !210
+[128] AIG 368 !210 266
+[129] AIG 298 260 368
+[130] AIG 476 342 298
+[131] AIG 6 !408 476
+[132] AIG 425 !86 !86
+[133] AIG 218 !374 !425
+[134] AIG 247 !217 218
+[135] AIG 279 6 247
+[136] AIG 120 441 279
+[137] AIG 87 !31 !334
+[138] AIG 228 !87 !217
+[139] AIG 397 224 !190
+[140] AIG 45 !397 224
+[141] AIG 63 224 45
+[142] AIG 300 266 !63
+[143] AIG 283 !374 !386
+[144] AIG 103 !300 283
+[145] AIG 104 !425 103
+[146] AIG 202 228 !104
+[147] AIG 479 !359 444
+[148] AIG 381 !36 !300
+[149] AIG 95 !479 !381
+[150] AIG 184 !425 95
+[151] AIG 70 202 184
+[152] AIG 198 120 !70
+[153] AIG 287 !217 !198
+[154] AIG 497 !331 218
+[155] AIG 235 31 !497
+[156] AIG 314 !358 !104
+[157] AIG 378 235 314
+[158] AIG 347 !279 !378
+[159] AIG 474 !171 !58
+[160] AIG 261 !374 474
+[161] AIG 447 !479 !169
+[162] AIG 74 !397 26
+[163] AIG 233 !74 134
+[164] AIG 269 36 233
+[165] AIG 293 !359 36
+[166] AIG 35 !269 !293
+[167] AIG 454 447 35
+[168] AIG 135 !309 !359
+[169] AIG 34 !454 !135
+[170] AIG 274 261 !34
+[171] AIG 173 441 6
+[172] AIG 301 274 173
+[173] AIG 68 293 381
+[174] AIG 403 !68 !292
+[175] AIG 351 !154 !178
+[176] AIG 392 !479 351
+[177] AIG 151 403 392
+[178] AIG 449 !87 454
+[179] AIG 211 449 358
+[180] AIG 193 151 211
+[181] AIG 144 !378 !193
+[182] AIG 165 301 !144
+[183] AIG 435 95 261
+[184] AIG 483 !435 454
+[185] AIG 17 !6 483
+[186] AIG 197 476 441
+[187] AIG 227 17 197
+[188] AIG 76 211 227
+[189] AIG 349 120 184
+[190] AIG 431 193 70
+[191] AIG 427 !349 !431
+[192] AIG 456 76 !427
+[193] AIG 473 165 !456
+[194] AIG 191 !347 !473
+[195] AIG 259 191 !456
+[196] AIG 317 !287 !259
+[197] AIG 175 435 !314
+[198] AIG 118 !175 87
+[199] AIG 250 !392 408
+[200] AIG 491 300 154
+[201] AIG 123 !491 !425
+[202] AIG 55 123 358
+[203] AIG 245 !184 55
+[204] AIG 267 !250 !245
+[205] AIG 370 118 267
+[206] AIG 77 370 211
+[207] AIG 243 !370 77
+[208] AIG 326 144 !243
+[209] AIG 114 287 !326
+[210] AIG 237 !317 114
+[211] AIG 332 165 !114
+[212] AIG 42 !34 17
+[213] AIG 461 95 42
+[214] AIG 496 431 461
+[215] AIG 288 283 178
+[216] AIG 159 496 288
+[217] AIG 182 243 301
+[218] AIG 5 267 435
+[219] AIG 276 !5 431
+[220] AIG 412 182 276
+[221] AIG 29 !159 412
+[222] AIG 387 29 !496
+[223] AIG 344 !332 387
+[224] AIG 206 !349 276
+[225] AIG 48 !250 228
+[226] AIG 200 135 !48
+[227] AIG 105 198 200
+[228] AIG 33 206 !105
+[229] AIG 450 !408 !217
+[230] AIG 241 450 !245
+[231] AIG 20 241 !197
+[232] AIG 132 !267 !211
+[233] AIG 152 !20 !132
+[234] AIG 355 !235 152
+[235] AIG 176 301 !355
+[236] AIG 140 !456 !176
+[237] AIG 434 76 206
+[238] AIG 418 140 !434
+[239] AIG 107 33 !418
+[240] AIG 460 !107 259
+[241] AIG 282 460 259
+[242] AIG 419 107 !282
+[243] AIG 28 !344 419
+[244] AIG 246 28 28
+[245] AIG 424 !237 !246
+[246] AIG 360 20 70
+[247] AIG 364 !427 360
+[248] AIG 21 !197 279
+[249] AIG 110 182 21
+[250] AIG 82 364 !110
+[251] AIG 312 !473 !431
+[252] AIG 203 21 312
+[253] AIG 316 203 !418
+[254] AIG 213 !82 !316
+[255] AIG 323 435 151
+[256] AIG 442 323 !427
+[257] AIG 413 !442 !76
+[258] AIG 280 413 !364
+[259] AIG 327 !245 !378
+[260] AIG 451 !326 327
+[261] AIG 174 !451 !451
+[262] AIG 71 !280 !174
+[263] AIG 445 !213 !71
+[264] AIG 388 !107 !174
+[265] AIG 192 445 388
+[266] AIG 379 364 !317
+[267] AIG 459 76 301
+[268] AIG 356 21 459
+[269] AIG 61 !176 !356
+[270] AIG 242 !61 82
+[271] AIG 436 !242 !203
+[272] AIG 4 !436 !242
+[273] AIG 226 !259 203
+[274] AIG 41 !226 !213
+[275] AIG 130 !4 41
+[276] AIG 439 !130 !344
+[277] AIG 493 379 !439
+[278] AIG 333 !192 493
+[279] AIG 125 424 !333
+[280] AIG 238 !424 246
+[281] AIG 341 !287 !191
+[282] AIG 252 173 152
+[283] AIG 354 !120 !252
+[284] AIG 37 !341 !354
+[285] AIG 214 !71 37
+[286] AIG 468 !214 214
+[287] AIG 187 !107 203
+[288] AIG 340 !282 !187
+[289] AIG 163 468 340
+[290] AIG 3 238 !163
+[291] AIG 183 !174 203
+[292] AIG 137 259 !183
+[293] AIG 311 203 !436
+[294] AIG 62 !137 !311
+[295] AIG 185 !445 !62
+[296] AIG 73 327 !370
+[297] AIG 166 !301 176
+[298] AIG 402 73 166
+[299] AIG 117 402 !237
+[300] AIG 44 117 468
+[301] AIG 367 130 44
+[302] AIG 138 !185 !367
+[303] AIG 296 3 138
+[304] AIG 452 !125 !296
+[305] AIG 172 !183 !317
+[306] AIG 320 !172 !419
+[307] AIG 113 436 320
+[308] AIG 39 !125 62
+[309] AIG 415 !311 !226
+[310] AIG 239 282 !187
+[311] AIG 398 415 239
+[312] AIG 91 398 !113
+[313] AIG 157 39 91
+[314] AIG 407 !113 157
+[315] AIG 467 !452 407
+[316] AIG 116 468 130
+[317] AIG 487 !116 340
+[318] AIG 484 !445 !493
+[319] AIG 133 487 484
+[320] AIG 101 133 39
+[321] AIG 13 !163 !320
+[322] AIG 281 39 !13
+[323] AIG 54 439 185
+[324] AIG 321 !3 !54
+[325] AIG 373 !439 !402
+[326] AIG 129 !238 373
+[327] AIG 189 !321 129
+[328] AIG 84 !281 !189
+[329] AIG 357 101 !84
+[330] AIG 257 467 357
+[331] AIG 495 !373 129
+[332] AIG 9 !189 495
+[333] AIG 195 !13 54
+[334] AIG 478 195 3
+[335] AIG 411 !424 !296
+[336] AIG 234 !478 411
+[337] AIG 258 9 !234
+[338] AIG 168 !257 !258
+[339] PO  501 !168
+[340] AIG 145 419 187
+[341] AIG 432 !145 !493
+[342] AIG 111 333 432
+[343] AIG 108 111 !129
+[344] AIG 363 !108 321
+[345] AIG 142 !452 !363
+[346] AIG 429 !192 320
+[347] AIG 255 !429 !113
+[348] AIG 244 !255 255
+[349] AIG 153 !244 !129
+[350] AIG 423 !142 153
+[351] AIG 361 !189 !363
+[352] AIG 421 !423 !361
+[353] AIG 232 !407 157
+[354] AIG 79 !421 !232
+[355] AIG 383 !357 79
+[356] AIG 52 421 407
+[357] AIG 8 !383 !52
+[358] AIG 458 !373 !429
+[359] AIG 352 133 458
+[360] AIG 225 !153 352
+[361] AIG 268 !424 !424
+[362] AIG 156 225 268
+[363] AIG 297 8 156
+[364] AIG 248 3 !189
+[365] AIG 158 248 424
+[366] AIG 492 158 !156
+[367] AIG 92 297 492
+[368] PO  502 92
+[369] AIG 324 !226 280
+[370] AIG 330 !226 !324
+[371] AIG 328 !192 !330
+[372] AIG 365 328 !185
+[373] AIG 307 !452 365
+[374] AIG 49 !307 495
+[375] AIG 50 248 !49
+[376] AIG 299 !467 307
+[377] AIG 256 !257 !299
+[378] AIG 60 !50 !256
+[379] PO  503 60
+[380] AIG 131 !344 44
+[381] AIG 462 131 !255
+[382] AIG 78 111 !462
+[383] AIG 147 478 78
+[384] AIG 453 84 147
+[385] AIG 98 453 !156
+[386] AIG 97 383 !98
+[387] AIG 286 !147 157
+[388] AIG 466 97 !286
+[389] PO  504 !466
+[390] AIG 30 492 !258
+[391] AIG 40 30 495
+[392] AIG 66 125 !84
+[393] AIG 369 66 !258
+[394] AIG 463 369 !299
+[395] AIG 262 !40 463
+[396] AIG 406 !3 157
+[397] AIG 18 !406 !232
+[398] AIG 389 478 !268
+[399] AIG 162 389 321
+[400] AIG 38 !162 !307
+[401] AIG 53 225 !38
+[402] AIG 319 53 84
+[403] AIG 209 !319 357
+[404] AIG 194 18 209
+[405] AIG 318 !262 !194
+[406] PO  505 !318
+[407] AIG 310 !97 !98
+[408] PO  506 310
+[409] AIG 10 !84 357
+[410] AIG 475 18 !257
+[411] AIG 490 10 !475
+[412] PO  507 !490
+[413] AIG 199 !40 492
+[414] PO  508 199
+[415] AIG 322 !79 !79
+[416] AIG 409 !475 322
+[417] PO  509 409
+[418] AIG 16 97 !286
+[419] AIG 275 475 !16
+[420] PO  510 !275
+
+fraig> cirp -pi
+PIs of the circuit: 440 273 405 136 271 390 472 305 343 414
+
+fraig> cirp -po
+POs of the circuit: 501 502 503 504 505 506 507 508 509 510
+
+fraig> cirp -fl
+Gates defined but not used  : 14 19 23 24 47 56 57 64 65 80 83 88 100 109 124 126 127 139 141 146 148 150 155 160 170 186 205 229 251 272 278 289 294 306 313 329 336 337 338 339 346 353 371 372 385 399 401 410 428 430 437 464 465 469 471 480 481 482 494 498
+
+fraig> ciropt
+Simplifying: 0 merging 443...
+Simplifying: 136 merging !263...
+Simplifying: 254 merging 285...
+Simplifying: 0 merging 485...
+Simplifying: 0 merging 416...
+Simplifying: 0 merging 470...
+Simplifying: 0 merging 112...
+Simplifying: 271 merging 386...
+Simplifying: 0 merging 302...
+Simplifying: 271 merging 81...
+Simplifying: 0 merging 380...
+Simplifying: 85 merging !59...
+Simplifying: 0 merging 72...
+Simplifying: 315 merging 215...
+Simplifying: 0 merging 224...
+Simplifying: 0 merging 190...
+Simplifying: 0 merging 177...
+Simplifying: 0 merging 149...
+Simplifying: 0 merging 11...
+Simplifying: 0 merging 1...
+Simplifying: 0 merging 264...
+Simplifying: 0 merging 201...
+Simplifying: 67 merging !181...
+Simplifying: 0 merging 500...
+Simplifying: 0 merging 486...
+Simplifying: 0 merging 31...
+Simplifying: 26 merging 290...
+Simplifying: 0 merging 395...
+Simplifying: 375 merging 420...
+Simplifying: 375 merging !86...
+Simplifying: 0 merging 167...
+Simplifying: 375 merging !210...
+Simplifying: 36 merging 207...
+Simplifying: 0 merging 220...
+Simplifying: 0 merging 58...
+Simplifying: 260 merging !309...
+Simplifying: 260 merging !334...
+Simplifying: 0 merging 408...
+Simplifying: 433 merging 171...
+Simplifying: 0 merging 441...
+Simplifying: 476 merging 6...
+Simplifying: 375 merging 425...
+Simplifying: 0 merging 120...
+Simplifying: 260 merging 87...
+Simplifying: 0 merging 397...
+Simplifying: 0 merging 45...
+Simplifying: 0 merging 63...
+Simplifying: 266 merging 300...
+Simplifying: 0 merging 198...
+Simplifying: 217 merging !287...
+Simplifying: 0 merging 235...
+Simplifying: 0 merging 378...
+Simplifying: 279 merging !347...
+Simplifying: 433 merging !474...
+Simplifying: 26 merging 74...
+Simplifying: 0 merging 173...
+Simplifying: 0 merging 301...
+Simplifying: 193 merging !144...
+Simplifying: 0 merging 165...
+Simplifying: 0 merging 197...
+Simplifying: 0 merging 227...
+Simplifying: 0 merging 76...
+Simplifying: 0 merging 349...
+Simplifying: 431 merging !427...
+Simplifying: 0 merging 456...
+Simplifying: 0 merging 473...
+Simplifying: 279 merging 191...
+Simplifying: 279 merging 259...
+Simplifying: 0 merging 250...
+Simplifying: 245 merging !267...
+Simplifying: 0 merging 332...
+Simplifying: 0 merging 182...
+Simplifying: 0 merging 412...
+Simplifying: 0 merging 29...
+Simplifying: 0 merging 387...
+Simplifying: 0 merging 344...
+Simplifying: 276 merging 206...
+Simplifying: 228 merging 48...
+Simplifying: 0 merging 105...
+Simplifying: 276 merging 33...
+Simplifying: 217 merging !450...
+Simplifying: 241 merging 20...
+Simplifying: 152 merging 355...
+Simplifying: 0 merging 176...
+Simplifying: 0 merging !140...
+Simplifying: 0 merging 434...
+Simplifying: 0 merging !418...
+Simplifying: 0 merging 107...
+Simplifying: 279 merging 460...
+Simplifying: 279 merging 282...
+Simplifying: 0 merging 419...
+Simplifying: 0 merging 28...
+Simplifying: 0 merging 246...
+Simplifying: 237 merging !424...
+Simplifying: 279 merging 21...
+Simplifying: 0 merging 110...
+Simplifying: 364 merging 82...
+Simplifying: 431 merging !312...
+Simplifying: 0 merging 316...
+Simplifying: 364 merging !213...
+Simplifying: 442 merging !413...
+Simplifying: 245 merging !327...
+Simplifying: 451 merging !174...
+Simplifying: 451 merging 388...
+Simplifying: 0 merging 459...
+Simplifying: 0 merging 356...
+Simplifying: 0 merging !61...
+Simplifying: 0 merging 242...
+Simplifying: 203 merging !436...
+Simplifying: 203 merging 4...
+Simplifying: 130 merging !439...
+Simplifying: 0 merging 238...
+Simplifying: 0 merging 252...
+Simplifying: 0 merging !354...
+Simplifying: 0 merging 37...
+Simplifying: 0 merging 214...
+Simplifying: 0 merging 468...
+Simplifying: 203 merging 187...
+Simplifying: 0 merging 163...
+Simplifying: 0 merging 3...
+Simplifying: 203 merging 311...
+Simplifying: 0 merging 166...
+Simplifying: 0 merging 402...
+Simplifying: 0 merging 117...
+Simplifying: 0 merging 44...
+Simplifying: 0 merging 367...
+Simplifying: 185 merging !138...
+Simplifying: 0 merging 296...
+Simplifying: 125 merging !452...
+Simplifying: 172 merging !320...
+Simplifying: 0 merging 116...
+Simplifying: 340 merging 487...
+Simplifying: 172 merging 13...
+Simplifying: 54 merging !321...
+Simplifying: 130 merging 373...
+Simplifying: 130 merging 129...
+Simplifying: 0 merging 495...
+Simplifying: 0 merging 9...
+Simplifying: 0 merging 478...
+Simplifying: 237 merging 411...
+Simplifying: 237 merging 234...
+Simplifying: 0 merging 258...
+Simplifying: 257 merging !168...
+Simplifying: 0 merging 145...
+Simplifying: 493 merging !432...
+Simplifying: 0 merging 244...
+Simplifying: 130 merging !153...
+Simplifying: 237 merging 268...
+Simplifying: 0 merging 248...
+Simplifying: 0 merging 158...
+Simplifying: 0 merging 492...
+Simplifying: 0 merging 92...
+Simplifying: 0 merging 49...
+Simplifying: 0 merging 50...
+Simplifying: 256 merging !60...
+Simplifying: 0 merging 131...
+Simplifying: 0 merging 462...
+Simplifying: 111 merging 78...
+Simplifying: 0 merging 147...
+Simplifying: 0 merging 453...
+Simplifying: 0 merging 98...
+Simplifying: 383 merging 97...
+Simplifying: 157 merging 286...
+Simplifying: 0 merging 30...
+Simplifying: 0 merging 40...
+Simplifying: 66 merging 369...
+Simplifying: 463 merging 262...
+Simplifying: 157 merging 406...
+Simplifying: 0 merging 389...
+Simplifying: 0 merging 162...
+Simplifying: 307 merging !38...
+Simplifying: 383 merging !310...
+Simplifying: 0 merging 199...
+Simplifying: 79 merging !322...
+
+fraig> cirsw
+Sweeping: AIG(5) removed...
+Sweeping: AIG(8) removed...
+Sweeping: AIG(14) removed...
+Sweeping: AIG(17) removed...
+Sweeping: AIG(19) removed...
+Sweeping: AIG(23) removed...
+Sweeping: AIG(24) removed...
+Sweeping: AIG(34) removed...
+Sweeping: AIG(42) removed...
+Sweeping: AIG(43) removed...
+Sweeping: AIG(47) removed...
+Sweeping: AIG(51) removed...
+Sweeping: AIG(52) removed...
+Sweeping: AIG(56) removed...
+Sweeping: AIG(57) removed...
+Sweeping: AIG(64) removed...
+Sweeping: AIG(65) removed...
+Sweeping: AIG(73) removed...
+Sweeping: AIG(80) removed...
+Sweeping: AIG(83) removed...
+Sweeping: AIG(88) removed...
+Sweeping: AIG(89) removed...
+Sweeping: AIG(93) removed...
+Sweeping: AIG(94) removed...
+Sweeping: AIG(99) removed...
+Sweeping: AIG(100) removed...
+Sweeping: AIG(102) removed...
+Sweeping: AIG(106) removed...
+Sweeping: AIG(109) removed...
+Sweeping: AIG(119) removed...
+Sweeping: AIG(122) removed...
+Sweeping: AIG(124) removed...
+Sweeping: AIG(126) removed...
+Sweeping: AIG(127) removed...
+Sweeping: AIG(132) removed...
+Sweeping: AIG(135) removed...
+Sweeping: AIG(139) removed...
+Sweeping: AIG(141) removed...
+Sweeping: AIG(146) removed...
+Sweeping: AIG(148) removed...
+Sweeping: AIG(150) removed...
+Sweeping: AIG(152) removed...
+Sweeping: AIG(155) removed...
+Sweeping: AIG(156) removed...
+Sweeping: AIG(159) removed...
+Sweeping: AIG(160) removed...
+Sweeping: AIG(170) removed...
+Sweeping: AIG(179) removed...
+Sweeping: AIG(186) removed...
+Sweeping: AIG(188) removed...
+Sweeping: AIG(195) removed...
+Sweeping: AIG(196) removed...
+Sweeping: AIG(200) removed...
+Sweeping: AIG(204) removed...
+Sweeping: AIG(205) removed...
+Sweeping: AIG(208) removed...
+Sweeping: AIG(219) removed...
+Sweeping: AIG(229) removed...
+Sweeping: AIG(230) removed...
+Sweeping: AIG(240) removed...
+Sweeping: AIG(251) removed...
+Sweeping: AIG(253) removed...
+Sweeping: AIG(255) removed...
+Sweeping: AIG(272) removed...
+Sweeping: AIG(274) removed...
+Sweeping: AIG(276) removed...
+Sweeping: AIG(277) removed...
+Sweeping: AIG(278) removed...
+Sweeping: AIG(284) removed...
+Sweeping: AIG(288) removed...
+Sweeping: AIG(289) removed...
+Sweeping: AIG(294) removed...
+Sweeping: AIG(297) removed...
+Sweeping: AIG(303) removed...
+Sweeping: AIG(306) removed...
+Sweeping: AIG(308) removed...
+Sweeping: AIG(313) removed...
+Sweeping: AIG(329) removed...
+Sweeping: AIG(335) removed...
+Sweeping: AIG(336) removed...
+Sweeping: AIG(337) removed...
+Sweeping: AIG(338) removed...
+Sweeping: AIG(339) removed...
+Sweeping: AIG(341) removed...
+Sweeping: AIG(346) removed...
+Sweeping: AIG(353) removed...
+Sweeping: AIG(371) removed...
+Sweeping: AIG(372) removed...
+Sweeping: AIG(376) removed...
+Sweeping: AIG(377) removed...
+Sweeping: AIG(385) removed...
+Sweeping: AIG(394) removed...
+Sweeping: AIG(396) removed...
+Sweeping: AIG(399) removed...
+Sweeping: AIG(400) removed...
+Sweeping: AIG(401) removed...
+Sweeping: AIG(410) removed...
+Sweeping: AIG(417) removed...
+Sweeping: AIG(426) removed...
+Sweeping: AIG(428) removed...
+Sweeping: AIG(430) removed...
+Sweeping: AIG(437) removed...
+Sweeping: AIG(446) removed...
+Sweeping: AIG(455) removed...
+Sweeping: AIG(461) removed...
+Sweeping: AIG(464) removed...
+Sweeping: AIG(465) removed...
+Sweeping: AIG(469) removed...
+Sweeping: AIG(471) removed...
+Sweeping: AIG(477) removed...
+Sweeping: AIG(480) removed...
+Sweeping: AIG(481) removed...
+Sweeping: AIG(482) removed...
+Sweeping: AIG(483) removed...
+Sweeping: AIG(494) removed...
+Sweeping: AIG(496) removed...
+Sweeping: AIG(497) removed...
+Sweeping: AIG(498) removed...
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI          10
+  PO          10
+  AIG        198
+------------------
+  Total      218
+
+fraig> cirp -n
+
+[0] PI  271
+[1] PI  305
+[2] PI  343
+[3] AIG 438 305 !343
+[4] PI  273
+[5] AIG 2 !271 !273
+[6] AIG 325 !438 2
+[7] PI  136
+[8] PI  405
+[9] PI  414
+[10] AIG 22 405 414
+[11] AIG 143 136 22
+[12] AIG 223 !343 !271
+[13] AIG 348 !2 !223
+[14] AIG 96 !143 348
+[15] AIG 488 325 96
+[16] AIG 27 !414 2
+[17] AIG 15 488 !27
+[18] AIG 249 !405 !438
+[19] AIG 69 249 488
+[20] AIG 32 15 !69
+[21] AIG 25 143 438
+[22] PI  472
+[23] AIG 46 472 414
+[24] AIG 265 46 !305
+[25] AIG 489 !136 !265
+[26] AIG 350 414 !2
+[27] AIG 12 !350 265
+[28] AIG 404 489 !12
+[29] AIG 85 25 !404
+[30] AIG 212 32 85
+[31] AIG 266 !212 143
+[32] AIG 422 271 !266
+[33] PI  390
+[34] AIG 121 !390 136
+[35] AIG 254 265 121
+[36] AIG 270 69 !32
+[37] AIG 75 254 !270
+[38] AIG 295 405 !273
+[39] PI  440
+[40] AIG 231 440 271
+[41] AIG 222 !295 231
+[42] AIG 115 12 !136
+[43] AIG 393 !438 !265
+[44] AIG 366 !115 !393
+[45] AIG 499 !222 366
+[46] AIG 67 75 !499
+[47] AIG 164 !271 67
+[48] AIG 178 !164 !271
+[49] AIG 216 !422 178
+[50] AIG 315 !121 !32
+[51] AIG 444 !315 !366
+[52] AIG 382 !315 444
+[53] AIG 134 271 !382
+[54] AIG 374 !216 !134
+[55] AIG 391 85 !222
+[56] AIG 90 !414 !438
+[57] AIG 236 90 22
+[58] AIG 221 !254 236
+[59] AIG 362 !350 !136
+[60] AIG 7 362 !273
+[61] AIG 384 221 7
+[62] AIG 128 489 !222
+[63] AIG 161 !384 !128
+[64] AIG 304 !391 161
+[65] AIG 345 !374 !304
+[66] AIG 180 !96 366
+[67] AIG 26 !180 !75
+[68] AIG 291 !348 405
+[69] AIG 375 !27 291
+[70] AIG 36 26 375
+[71] AIG 217 !345 36
+[72] AIG 342 36 375
+[73] AIG 457 !134 67
+[74] AIG 359 457 67
+[75] AIG 260 !359 !375
+[76] AIG 368 375 266
+[77] AIG 298 260 368
+[78] AIG 476 342 298
+[79] AIG 218 !374 !375
+[80] AIG 247 !217 218
+[81] AIG 279 476 247
+[82] AIG 317 217 !279
+[83] AIG 293 !359 36
+[84] AIG 381 !36 !266
+[85] AIG 68 293 381
+[86] AIG 448 !270 266
+[87] AIG 292 448 !212
+[88] AIG 403 !68 !292
+[89] AIG 479 !359 444
+[90] AIG 154 422 !178
+[91] AIG 351 !154 !178
+[92] AIG 392 !479 351
+[93] AIG 151 403 392
+[94] AIG 169 154 !359
+[95] AIG 447 !479 !169
+[96] AIG 233 !26 134
+[97] AIG 269 36 233
+[98] AIG 35 !269 !293
+[99] AIG 454 447 35
+[100] AIG 449 !260 454
+[101] AIG 433 !154 !67
+[102] AIG 331 433 !134
+[103] AIG 358 !169 331
+[104] AIG 211 449 358
+[105] AIG 193 151 211
+[106] AIG 95 !479 !381
+[107] AIG 261 !374 !433
+[108] AIG 435 95 261
+[109] AIG 283 !374 !271
+[110] AIG 103 !266 283
+[111] AIG 104 !375 103
+[112] AIG 314 !358 !104
+[113] AIG 175 435 !314
+[114] AIG 118 !175 260
+[115] AIG 184 !375 95
+[116] AIG 491 266 154
+[117] AIG 123 !491 !375
+[118] AIG 55 123 358
+[119] AIG 245 !184 55
+[120] AIG 370 118 !245
+[121] AIG 77 370 211
+[122] AIG 243 !370 77
+[123] AIG 326 !193 !243
+[124] AIG 114 !217 !326
+[125] AIG 237 !317 114
+[126] AIG 228 !260 !217
+[127] AIG 202 228 !104
+[128] AIG 70 202 184
+[129] AIG 431 193 70
+[130] AIG 241 !217 !245
+[131] AIG 360 241 70
+[132] AIG 364 431 360
+[133] AIG 323 435 151
+[134] AIG 442 323 431
+[135] AIG 280 !442 !364
+[136] AIG 451 !326 !245
+[137] AIG 71 !280 451
+[138] AIG 445 364 !71
+[139] AIG 192 445 451
+[140] AIG 379 364 !317
+[141] AIG 203 279 !431
+[142] AIG 226 !279 203
+[143] AIG 41 !226 364
+[144] AIG 130 !203 41
+[145] AIG 493 379 130
+[146] AIG 333 !192 493
+[147] AIG 125 !237 !333
+[148] AIG 183 451 203
+[149] AIG 172 !183 !317
+[150] AIG 113 !203 !172
+[151] AIG 137 279 !183
+[152] AIG 62 !137 !203
+[153] AIG 39 !125 62
+[154] AIG 415 !203 !226
+[155] AIG 239 279 !203
+[156] AIG 398 415 239
+[157] AIG 91 398 !113
+[158] AIG 157 39 91
+[159] AIG 407 !113 157
+[160] AIG 467 125 407
+[161] AIG 340 !279 !203
+[162] AIG 484 !445 !493
+[163] AIG 133 340 484
+[164] AIG 101 133 39
+[165] AIG 281 39 !172
+[166] AIG 185 !445 !62
+[167] AIG 54 !130 185
+[168] AIG 189 54 130
+[169] AIG 84 !281 !189
+[170] AIG 357 101 !84
+[171] AIG 257 467 357
+[172] PO  501 257
+[173] CONST0
+[174] PO  502 0
+[175] AIG 324 !226 280
+[176] AIG 330 !226 !324
+[177] AIG 328 !192 !330
+[178] AIG 365 328 !185
+[179] AIG 307 125 365
+[180] AIG 299 !467 307
+[181] AIG 256 !257 !299
+[182] PO  503 !256
+[183] AIG 111 333 !493
+[184] AIG 108 111 !130
+[185] AIG 363 !108 !54
+[186] AIG 142 125 !363
+[187] AIG 423 !142 !130
+[188] AIG 361 !189 !363
+[189] AIG 421 !423 !361
+[190] AIG 232 !407 157
+[191] AIG 79 !421 !232
+[192] AIG 383 !357 79
+[193] AIG 466 383 !157
+[194] PO  504 !466
+[195] AIG 66 125 !84
+[196] AIG 463 66 !299
+[197] AIG 18 !157 !232
+[198] AIG 429 !192 !172
+[199] AIG 458 !130 !429
+[200] AIG 352 133 458
+[201] AIG 225 130 352
+[202] AIG 53 225 307
+[203] AIG 319 53 84
+[204] AIG 209 !319 357
+[205] AIG 194 18 209
+[206] AIG 318 !463 !194
+[207] PO  505 !318
+[208] PO  506 !383
+[209] AIG 10 !84 357
+[210] AIG 475 18 !257
+[211] AIG 490 10 !475
+[212] PO  507 !490
+[213] PO  508 0
+[214] AIG 409 !475 !79
+[215] PO  509 409
+[216] AIG 16 383 !157
+[217] AIG 275 475 !16
+[218] PO  510 !275
+
+fraig> cirp -fl
+
+fraig> cirwrite
+aag 500 10 0 10 198
+880
+546
+810
+272
+542
+780
+944
+610
+686
+828
+514
+0
+513
+933
+637
+767
+981
+0
+818
+551
+876 610 687
+4 543 547
+650 877 4
+44 810 828
+286 272 44
+446 687 543
+696 5 447
+192 287 696
+976 650 192
+54 829 4
+30 976 55
+498 811 877
+138 498 976
+64 30 139
+50 286 876
+92 944 828
+530 92 611
+978 273 531
+700 828 5
+24 701 530
+808 978 25
+170 50 809
+424 64 170
+532 425 286
+844 542 533
+242 781 272
+508 530 242
+540 138 65
+150 508 541
+590 810 547
+462 880 542
+444 591 462
+230 24 273
+786 877 531
+732 231 787
+998 445 732
+134 150 999
+328 543 134
+356 329 543
+432 845 356
+630 243 65
+888 631 733
+764 631 888
+268 542 765
+748 433 269
+782 170 445
+180 829 877
+472 180 44
+442 509 472
+724 701 273
+14 724 547
+768 442 14
+256 978 445
+322 769 257
+608 783 322
+690 749 609
+360 193 732
+52 361 151
+582 697 810
+750 55 582
+72 52 750
+434 691 72
+684 72 750
+914 269 134
+718 914 134
+520 719 751
+736 750 532
+596 520 736
+952 684 596
+436 749 751
+494 435 436
+558 952 494
+634 434 559
+586 719 72
+762 73 533
+136 586 762
+896 541 532
+584 896 425
+806 137 585
+958 719 888
+308 844 357
+702 309 357
+784 959 702
+302 806 784
+338 308 719
+894 959 339
+466 53 268
+538 72 466
+70 539 587
+908 894 70
+898 521 908
+866 309 135
+662 866 269
+716 339 662
+422 898 716
+386 302 422
+190 959 763
+522 749 867
+870 190 522
+566 749 543
+206 533 566
+208 751 206
+628 717 209
+350 870 629
+236 351 520
+368 751 190
+982 532 308
+246 983 751
+110 246 716
+490 369 110
+740 236 491
+154 740 422
+486 741 154
+652 387 487
+228 435 653
+474 635 228
+456 521 435
+404 456 209
+140 404 368
+862 386 140
+482 435 491
+720 482 140
+728 862 720
+646 870 302
+884 646 862
+560 885 729
+902 653 491
+142 561 902
+890 728 143
+384 890 902
+758 728 635
+406 558 863
+452 559 406
+82 453 728
+260 407 82
+986 758 260
+666 385 986
+250 475 667
+366 902 406
+344 367 635
+226 407 345
+274 558 367
+124 275 407
+78 251 124
+830 407 453
+478 558 407
+796 830 478
+182 796 227
+314 78 182
+814 227 314
+934 250 814
+680 559 407
+968 891 987
+266 680 968
+202 266 78
+562 78 345
+370 891 125
+108 261 370
+378 108 260
+168 563 379
+714 202 169
+514 934 714
+648 453 560
+660 453 649
+656 385 661
+730 656 371
+614 250 730
+598 935 614
+512 515 599
+222 666 987
+216 222 261
+726 217 109
+284 250 727
+846 285 261
+722 379 727
+842 847 723
+464 815 314
+158 843 465
+766 715 158
+932 766 315
+132 250 169
+926 132 599
+36 315 465
+858 385 345
+916 261 859
+704 266 916
+450 260 704
+106 450 614
+638 106 168
+418 639 714
+388 36 418
+636 927 389
+20 169 714
+950 36 515
+980 20 951
+818 951 159
+32 766 315
+550 950 33
+c
+AAG output by Chung-Yang (Ric) Huang
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 0 seconds
+Total memory used: 0.3281 M Bytes
+
+fraig> q -f
+
