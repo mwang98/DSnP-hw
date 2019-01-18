@@ -28,7 +28,7 @@ class CirMgr
 {
 	friend bool myCompare4fec(const unsigned&, const unsigned&);
 public:
-	CirMgr():_switch(false),_totalGate(0) {}
+	CirMgr():_switch(false),_numSim(0), _totalGate(0) {}
 	~CirMgr();
 
 	// Access functions
@@ -94,6 +94,7 @@ private:
 	void fraig(CirGate*, int&);
 	
 	bool							_switch;
+	int 							_numSim;
 	SatSolver 						_solver;
    	ofstream           				*_simLog;
 	vector<CirGate*> 				_GateList;

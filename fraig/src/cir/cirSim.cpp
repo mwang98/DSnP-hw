@@ -54,20 +54,31 @@ void show_sim(size_t a){
 /*   Public member functions about Simulation   */
 /************************************************/
 void CirMgr::randomSim(){
-	size_t iteration_num = _totalGate + _PoList.size() * 2 , cnt = 0;
-	iteration_num / 64 == 0 ? iteration_num : iteration_num /= 64;
+	size_t random_num = (_totalGate + _PoList.size() * 2), iteration_num = 0 , cnt = 0;
+	random_num / 64 == 0 ? random_num : random_num /= 64;
 	build_DFS();
 	initFecGrps();
 	
 	if(!_CEXipPattern.empty()){
-		iteration_num = _CEXipPattern.size();
-		for(size_t i = 0, n = _CEXipPattern.size() ; i < n ; ++i){
+		size_t ran_num = random_num * pow(0.6, _numSim);
+		iteration_num  = _CEXipPattern.size() + ran_num;
+		assert(ran_num <= random_num);
+		for(size_t i = 0 ; i < _CEXipPattern.size() ; ++i){
 			doSimulation(_CEXipPattern[i]);
 			writeSimulation(_CEXipPattern[i], 64);
-		}	
+		}
+		for(size_t i = 0 ; i < ran_num ; ++i){
+			vector<size_t> pattern; pattern.reserve(_PiList.size());
+			for(size_t i = 0, n = _PiList.size() ; i < n ; ++i)
+				pattern.push_back(rngen(engine));
+			doSimulation(pattern);
+			writeSimulation(pattern, 64);
+		}
+		_numSim++;
 	}
 	else
-		while(cnt++ != iteration_num){
+		while(cnt++ != random_num){
+			iteration_num = random_num;
 			vector<size_t> pattern; pattern.reserve(_PiList.size());
 			for(size_t i = 0, n = _PiList.size() ; i < n ; ++i)
 				pattern.push_back(rngen(engine));
