@@ -20,12 +20,10 @@
 
 using namespace std;
 
-// TODO: Please keep "CirMgr::strash()" and "CirMgr::fraig()" for cir cmd.
-//       Feel free to define your own variables or functions
-
 /*******************************/
 /*   Global variable and enum  */
 /*******************************/
+// 使 _fecGrp 中的元素按照 _DFSList 排序
 bool myCompare4fec(const unsigned& v1, const unsigned& v2){
 	unsigned pos1 = (*cirMgr -> _DFSmap.find(v1/2)).second;
 	unsigned pos2 = (*cirMgr -> _DFSmap.find(v2/2)).second;
@@ -51,19 +49,12 @@ void show_bin(size_t a){
 // _floatList may be changed.
 // _unusedList and _undefList won't be changed
 void CirMgr::strash(){
-	/*
-	for(size_t i = 0, n = _PoList.size() ; i < n ; ++i)
-		strash(_GateList[_PoList[i]] -> _fanIn[0].gatePtr());
-	*/
+	// For loop with _DFSList version
 	build_DFS();
 	for(size_t i = 0, n = _DFSList.size() ; i < n ; ++i){
 		CirGate* gate = _GateList[_DFSList[i]];
 		assert(gate != 0);
 		if(gate != 0 and gate -> getTypeStr() == "AIG"){
-			/* Recursive call
-			for(size_t i = 0, n = (gate -> _fanIn).size() ; i < n ; ++i)
-			strash((gate -> _fanIn[i]).gatePtr());
-			*/
 			unordered_map<string, CirGate*> :: iterator it;
 			string key, ip1, ip2;
 			ip1 = to_string((gate -> _fanIn[0].getID())*2 + (gate -> _fanIn[0]).is_invert());
@@ -82,8 +73,6 @@ void CirMgr::strash(){
 			}
 		}
 	}
-
-	//setRef();
 	clear_DFS();
 	_NUList.clear();
 	_FlList.clear();
@@ -109,7 +98,7 @@ void CirMgr::fraig(){
 		CirGate* ptr = _GateList[_PoList[i]];
 		fraig(ptr -> _fanIn[0].gatePtr(), cnt);
 	}
-	// 如果無法湊滿 64 個，則 Collect 不足 64 個的 Counter-Example
+	// 如果無法湊滿 64 個，則 Collect 不足 64 的 Counter-Examples
 	if(cnt % 64 != 0){
 		vector<size_t> tmp;
 		for(size_t i = 0, n = _PiList.size() ; i < n ; ++i)
@@ -122,8 +111,11 @@ void CirMgr::fraig(){
 	_FlList.clear();
 	_NUList.clear();
 	_fecGrps.clear();
+
+	// Reset _fecPos (pointer to FEC group) of each gate
 	for(size_t i = 0, n = _GateList.size() ; i < n ; i++)
 		if(_GateList[i] != 0) _GateList[i] -> setfecPos(0);
+	
 	strash();
 }
 void CirMgr::printFEC() const{
@@ -133,9 +125,9 @@ void CirMgr::printFEC() const{
 /*   Private member functions about fraig   */
 /********************************************/
 //-----------------strash---------------------
+// Recursive Version
 void CirMgr::strash(CirGate* gate){
 	if(gate -> getRef() == CirGate :: _globalRef) return;
-
 	if(gate -> getTypeStr() == "AIG"){
 		for(size_t i = 0, n = (gate -> _fanIn).size() ; i < n ; ++i)
 		strash((gate -> _fanIn[i]).gatePtr());
@@ -161,6 +153,8 @@ void CirMgr::strash(CirGate* gate){
 }
 // Merge the second gate to the first.
 void CirMgr::mergeGates(CirGate* merger, CirGate* merged, bool ivt){
+	// bool ivt 為兩個 gates 之間是否為 invert equivalence。strash() 皆為 false；fraig() 則不定。
+	// merged gate 的 _fanOut 要全部 copy 到 merger；_fanOut gates 要把 merged gate 用 merger 覆蓋。 
 	for(size_t i = 0, n = (merged -> _fanOut).size() ; i < n ; ++i){
 		bool ivt_origin = (merged -> _fanOut)[i].is_invert();
 		(merger -> _fanOut).push_back(GateV((merged -> _fanOut)[i].gatePtr(), ivt xor ivt_origin));
@@ -172,6 +166,7 @@ void CirMgr::mergeGates(CirGate* merger, CirGate* merged, bool ivt){
 			}	
 		}
 	}
+	// merged gate 的 _fanIn gates 要把 merged gate 從其 _fanOut 移除
 	for(size_t i = 0, n = (merged -> _fanIn).size() ; i < n ; ++i){
 		CirGate* prev = (merged -> _fanIn)[i].gatePtr();
 		vector<GateV>::iterator it = (prev -> _fanOut).begin();
@@ -197,12 +192,14 @@ void CirMgr::fraig(CirGate* gate, int& cnt){
 		_CEXipPattern.push_back(tmp);
 		_switch = false;
 
-		// 更新 _fecGrps：若 Simulation Value 不同 or Complement，則從 _fecGrps 移除
+		// 每次收集 64 個，更新 _fecGrps：若 Simulation Value 不同 or Complement，則從 _fecGrps 移除
+		// 確保每個 counter examples 的資訊完全利用
 		for(size_t i = 0, n = _fecGrps.size() ; i < n ; ++i){
 			unsigned first = _fecGrps[i][0] / 2;
 			vector<unsigned>::iterator it = _fecGrps[i].begin();
 			while(it != _fecGrps[i].end()){
 				unsigned cmp = (*it) / 2;
+				// fraig 之後的 gate ID 不會從 _fecGrps 移除
 				if(_GateList[cmp] == 0){
 					++it;
 					continue;
@@ -245,13 +242,12 @@ void CirMgr::initSolver(){
 	for(size_t i = 0, n = _GateList.size() ; i < n ; ++i)
 		if(_GateList[i] != 0) _GateList[i] -> setSATid(_solver.newVar());
 
-	// CONST0 需要獨立出來建立關聯，因為可能不在 DFS 中，但卻一定要用到。
+	// CONST0 需要獨立出來建立 CNF，因為可能不在 DFS 中，但卻一定要用到。
 	Var tmp = _solver.newVar();
 	_solver.addAigCNF(_GateList[0] -> getSATid(), tmp, false, tmp, true);
-	for(size_t i = 0, n = _PoList.size() ; i < n ; ++i){
-		CirGate* ptr = _GateList[_PoList[i]];
-		buildFanInCNF(ptr -> _fanIn[0].getID());
-	}
+	for(size_t i = 0, n = _PoList.size() ; i < n ; ++i)
+		buildFanInCNF(_GateList[_PoList[i]] -> _fanIn[0].getID());
+	
 	setRef();
 }
 void CirMgr::buildFanInCNF(const unsigned& id){
@@ -260,6 +256,7 @@ void CirMgr::buildFanInCNF(const unsigned& id){
 	if(id == 0) return;
 	if(gate -> getTypeStr() == "PI" or gate -> getTypeStr() == "UNDEF" ) return;
 	if(gate -> getRef() == CirGate::_globalRef) return;
+	// Connection was built after its input gates have built connections
 	for(size_t i = 0, n = gate -> _fanIn.size() ; i < n ; ++i)
 		buildFanInCNF(gate -> _fanIn[i].getID());
 	Var vf = gate -> getSATid();
@@ -276,8 +273,8 @@ void CirMgr::proveFEC(const unsigned& g1, const unsigned& g2, int& cnt, bool ivt
 	_solver.assumeRelease();
 	_solver.assumeProperty(newV, true);
 	if(_solver.assumpSolve()){
-		// 一收集到 counter example 就更改所有 gate 的 simulation value，可使同個 fecGrp 中產生不同 sim value
-		// fraig 可以少證明同個 fecGrp 內 gate 等價的次數
+		// 一收集到 counter example 就更改所有 gates 的 simulation values，可使同個 fecGrp 中產生不同 sim values
+		// SATsolver 可以少證明同個 fecGrp 內 gate 為等價的次數
 		for(size_t i = 0, n = _DFSList.size() ; i < n ; ++i){
 			CirGate* gate = _GateList[_DFSList[i]];
 			if(gate == 0) continue;	
