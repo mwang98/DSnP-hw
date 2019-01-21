@@ -51,10 +51,39 @@ void show_bin(size_t a){
 // _floatList may be changed.
 // _unusedList and _undefList won't be changed
 void CirMgr::strash(){
+	/*
 	for(size_t i = 0, n = _PoList.size() ; i < n ; ++i)
 		strash(_GateList[_PoList[i]] -> _fanIn[0].gatePtr());
+	*/
+	build_DFS();
+	for(size_t i = 0, n = _DFSList.size() ; i < n ; ++i){
+		CirGate* gate = _GateList[_DFSList[i]];
+		assert(gate != 0);
+		if(gate != 0 and gate -> getTypeStr() == "AIG"){
+			/* Recursive call
+			for(size_t i = 0, n = (gate -> _fanIn).size() ; i < n ; ++i)
+			strash((gate -> _fanIn[i]).gatePtr());
+			*/
+			unordered_map<string, CirGate*> :: iterator it;
+			string key, ip1, ip2;
+			ip1 = to_string((gate -> _fanIn[0].getID())*2 + (gate -> _fanIn[0]).is_invert());
+			ip2 = to_string((gate -> _fanIn[1].getID())*2 + (gate -> _fanIn[1]).is_invert());
+			ip1 < ip2 ? key = (ip1 + "_" + ip2) : key = (ip2 + "_" + ip1);
+			it = _hash.find(key);
+			if(it == _hash.end())
+				_hash.insert(make_pair(key, gate));
+			else{
+				if((*it).second == gate) return;
+				mergeGates((*it).second, gate, false);
+				cout << "Strashing: " << (*it).second -> getID() << " merging " << gate -> getID() << "..." << endl;
+				_GateList[gate -> getID()] = 0;
+				delete gate;
+				--_totalGate;
+			}
+		}
+	}
 
-	setRef();
+	//setRef();
 	clear_DFS();
 	_NUList.clear();
 	_FlList.clear();
@@ -64,6 +93,7 @@ void CirMgr::fraig(){
 	int cnt = 0;
 	initSolver();
 	_CEXipPattern.clear();
+	build_DFS();
 
 	// Sort FEC Group according to its DFS position
 	for(size_t i = 0, n = _fecGrps.size() ; i < n ; ++i)
@@ -74,7 +104,6 @@ void CirMgr::fraig(){
 		for(size_t j = 0, m = _fecGrps[i].size() ; j < m ; ++j)
 			_GateList[_fecGrps[i][j] / 2] -> setfecPos(fecGrp);
 	}
-
 	// Calling PO fanIn (DFS order)
 	for(size_t i = 0, n = _PoList.size() ; i < n ; ++i){
 		CirGate* ptr = _GateList[_PoList[i]];
@@ -157,7 +186,7 @@ void CirMgr::mergeGates(CirGate* merger, CirGate* merged, bool ivt){
 //-------------------Fraig---------------------
 void CirMgr::fraig(CirGate* gate, int& cnt){
 	if(gate -> getRef() == CirGate::_globalRef) return;
-	if(gate -> getTypeStr() == "PI") return;
+	if(gate -> getTypeStr() == "PI" or gate -> getTypeStr() == "UNDEF") return;
 
 	if(cnt % 64 == 1) _switch = true;
 	if(cnt % 64 == 0 and cnt != 0 and _switch == true){
@@ -205,7 +234,7 @@ void CirMgr::fraig(CirGate* gate, int& cnt){
 			unsigned g2 = (*fecPos)[pos] / 2;
 			bool	ivt = ((*fecPos)[0]+ (*fecPos)[pos]) % 2;
 			if(_GateList[g1] -> getValue() == _GateList[g2] -> getValue() or 
-			  ~(_GateList[g1] -> getValue()) == _GateList[g2] -> getValue())
+			 ~(_GateList[g1] -> getValue()) == _GateList[g2] -> getValue())
 				proveFEC(g1, g2, cnt, ivt);
 		}
 	}
@@ -227,8 +256,9 @@ void CirMgr::initSolver(){
 }
 void CirMgr::buildFanInCNF(const unsigned& id){
 	CirGate* gate = _GateList[id];
+	// CONST0, PI, UNDEF 不需要建立 CNF
 	if(id == 0) return;
-	if(gate -> getTypeStr() == "PI") return;
+	if(gate -> getTypeStr() == "PI" or gate -> getTypeStr() == "UNDEF" ) return;
 	if(gate -> getRef() == CirGate::_globalRef) return;
 	for(size_t i = 0, n = gate -> _fanIn.size() ; i < n ; ++i)
 		buildFanInCNF(gate -> _fanIn[i].getID());
@@ -247,7 +277,7 @@ void CirMgr::proveFEC(const unsigned& g1, const unsigned& g2, int& cnt, bool ivt
 	_solver.assumeProperty(newV, true);
 	if(_solver.assumpSolve()){
 		// 一收集到 counter example 就更改所有 gate 的 simulation value，可使同個 fecGrp 中產生不同 sim value
-		// fraig 可以少證明同個 fecGrp 內gate等價的次數
+		// fraig 可以少證明同個 fecGrp 內 gate 等價的次數
 		for(size_t i = 0, n = _DFSList.size() ; i < n ; ++i){
 			CirGate* gate = _GateList[_DFSList[i]];
 			if(gate == 0) continue;	

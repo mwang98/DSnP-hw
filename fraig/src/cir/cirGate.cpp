@@ -70,7 +70,7 @@ void CirGate::buildFanIn(vector<CirGate*>& list, int ip1, int ip2){
 	if(ip2 == -1) return;
 	tmp = list[ip2/2];
 	if(tmp == 0)
-		list[ip2/2] = new FloGate(ip2/2);
+		list[ip2/2] = tmp = new FloGate(ip2/2);
 	
 	GateV buff3(tmp,  ip2%2);
 	GateV buff4(this, ip2%2);

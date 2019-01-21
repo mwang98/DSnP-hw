@@ -170,9 +170,9 @@ bool CirMgr::readCircuit(const string& fileName){
 	if(!file.is_open()){
       cerr << "Cannot open design \""<< fileName << "\"!!";
       return false;
-   	}
-   	getline(file, line); ss.str(line);
-   	if(regex_match(line, title_pattern)){
+   }
+   getline(file, line); ss.str(line);
+   if(regex_match(line, title_pattern)){
      	ss >> _header;
 		for(unsigned i = 0 ; i < 5 ; ++i){
 			string buff;
@@ -185,10 +185,10 @@ bool CirMgr::readCircuit(const string& fileName){
 			return false;
 		}
    }
-   	else{
-      	cerr << "[ERROR]" << endl;
-      	return false;
-   	}
+   else{
+     	cerr << "[ERROR]" << endl;
+   	return false;
+   }
 
 	_GateList.reserve(_miloa[0] + 1 + _miloa[3]);
 	for(size_t i = 0 ; i < _miloa[0] + 1 + _miloa[3] ; ++i) _GateList.push_back(NULL);
@@ -272,17 +272,19 @@ bool CirMgr::readCircuit(const string& fileName){
 		if(j < _miloa[1]) file >> id;
 		else if(j < _miloa[1] + _miloa[3]){
 			file >> ip1;
+			assert(_GateList[outputNo] != 0);
 			_GateList[outputNo++] -> buildFanIn(_GateList, ip1, -1);
 		}
 		else if(j < _miloa[1] + _miloa[3] + _miloa[4]){
 			file >> id >> ip1 >> ip2;
+			assert(_GateList[id/2] != 0);
 			_GateList[id/2] -> buildFanIn(_GateList, ip1, ip2);
 		}
 	}
 	//buildConnet();
 
 	file.close();
-   	return true;
+   return true;
 }
 
 

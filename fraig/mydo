@@ -1,5 +1,8 @@
 cirr tests.fraig/sim13.aag -r
 cirsim -f tests.fraig/pattern.13
-usage
 cirfraig
+cirsweep
+ciropt
+cirp
 usage
+
