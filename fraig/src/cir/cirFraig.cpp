@@ -6,13 +6,12 @@
 	Copyright    [ Copyleft(c) 2012-present LaDs(III), GIEE, NTU, Taiwan ]
 ****************************************************************************/
 
-#include <cassert>
-
 #include "cirMgr.h"
 #include "cirGate.h"
 #include "sat.h"
 #include "myHashMap.h"
 #include "util.h"
+#include <cassert>
 #include <unordered_map>
 #include <utility>
 #include <algorithm>

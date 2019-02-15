@@ -69,7 +69,7 @@ public:
 	// For simulation()
 	virtual void simulation(){ return; }
 	        void setValue(const size_t& pattern){ _value = pattern; }
-			void setfecPos(vector<unsigned>* ptr){ _fecPos = ptr; }
+					void setfecPos(vector<unsigned>* ptr){ _fecPos = ptr; }
 	vector<unsigned>* getfecPos() {return _fecPos; }
 
 	// For fraig()

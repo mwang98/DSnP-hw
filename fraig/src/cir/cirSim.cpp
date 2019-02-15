@@ -161,14 +161,10 @@ void CirMgr::doSimulation(const vector<size_t>& pattern){
 		_GateList[_PiList[i]] -> setValue(pattern[i]);
 	for(size_t i = 0, n = _DFSList.size() ; i < n ; ++i)
 		_GateList[_DFSList[i]] -> simulation();
-	//for(size_t i = 0, n = _PoList.size() ; i < n ; ++i)
-		//_GateList[_PoList[i]] -> simulation();
-	// Traverse the graph once
-	//setRef();
 	
 	for(size_t i = 0, n = _fecGrps.size() ; i < n ; ++i){
-		unordered_map<size_t, vector<unsigned> > hash;
-		unordered_map<size_t, vector<unsigned> >::iterator it;
+		unordered_map <size_t, vector<unsigned> > hash;
+		unordered_map <size_t, vector<unsigned> >::iterator it;
 
 		if(_fecGrps[i].size() == 2){
 			size_t v1 = _GateList[_fecGrps[i][0]/2] -> getValue();
